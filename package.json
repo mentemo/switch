@@ -6,13 +6,16 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "check": "yarn run typecheck && yarn run eslint:lint && yarn run prettier:lint",
+    "fix": "yarn run eslint:fix && yarn run prettier:fix",
     "eslint:cmd": "eslint --config .eslintrc.json --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint",
     "eslint:lint": "yarn run eslint:cmd .",
     "eslint:fix": "yarn run eslint:cmd . --fix",
     "prettier:cmd": "prettier --ignore-unknown",
     "prettier:lint": "yarn run prettier:cmd --check .",
     "prettier:fix": "yarn run prettier:cmd --write .",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "expo": "~41.0.1",
@@ -40,6 +43,6 @@
   },
   "private": true,
   "simple-git-hooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "npx lint-staged"
   }
 }
