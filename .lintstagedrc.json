@@ -1,0 +1,6 @@
+{
+  "*.{js,ts,tsx}": [
+    "yarn run eslint:cmd --fix",
+    "yarn run prettier:cmd --write"
+  ]
+}
